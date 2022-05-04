@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid mt20">
+        <h1>Availabe Quizzes</h1>
+        <div class="row" *ngIf = "quizzes">
+            <div class="col-md-6" *ngFor = "let q of quizzes">
+                    <mat-card class="mb20">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{q.title}}</mat-card-title>
+                            <mat-card-subtitle>{{q.category.title}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content><p class="truncate">{{q.description}}</p></mat-card-content>
+                        <mat-card-actions>
+                            <div class="bootstrap-wrapper">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <button mat-raised-button color = "primary">View</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button 
+                                        mat-raised-button 
+                                        [routerLink] = "'/user-dashboard/instructions/'+q.qId" 
+                                        color = "accent">
+                                            Start
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button mat-button color = "accent">Questions: {{q.numberOfQuestions}}</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button mat-button color = "accent">M.M.: {{q.maxMarks}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-actions>
+                    </mat-card>
+                    <div class="col-md-12" *ngIf = "quizzes.length == 0">
+                        <mat-card>
+                            <mat-card-content>
+                                <h1>No data in this category</h1>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

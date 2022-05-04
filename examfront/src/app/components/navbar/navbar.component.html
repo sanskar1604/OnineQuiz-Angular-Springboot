@@ -1,0 +1,39 @@
+
+  
+  
+    <mat-toolbar color="primary">
+     <a  routerLink="/" mat-icon-button class="example-icon mb20" aria-label="Example icon-button with menu icon">
+      <!-- <mat-icon></mat-icon> -->
+      <span routerLink="/" ><img src="../../../assets/DXC_Logo.png" alt="Girl in a jacket" width="100" height="60"></span>
+
+     </a>      
+     <h3 style="margin-left: 80px;">Online Quiz</h3>
+
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn"
+     [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon mr20" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon> -->
+      Login
+    </a>
+    <a 
+    *ngIf="!isLoggedIn"
+     [routerLink]="'/signup'" mat-icon-button class="example-icon mr20" aria-label="Example icon-button with share icon">
+     <!-- <mat-icon>register</mat-icon> -->
+     Register
+    </a>
+    <button  style="margin: 50px;"
+    *ngIf="isLoggedIn"
+     mat-icon-button class="example-icon ml20" 
+     routerLink="/admin/profile"
+     aria-label="Example icon-button with share icon">
+     
+    {{login.getUser().username}}
+   </button>
+    <a (click)="logout()"
+     *ngIf="isLoggedIn"
+      mat-icon-button class="example-icon mr20" aria-label="Example icon-button with share icon">
+     <!-- <mat-icon>register</mat-icon> -->
+     Logout
+    </a>
+  </mat-toolbar>
+ 

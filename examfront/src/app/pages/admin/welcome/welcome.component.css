@@ -1,0 +1,13 @@
+.mat-link{
+    text-decoration: none;
+}
+
+.mat-title{
+    font-size: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.mat-icon{
+    font-size: 80px;
+}

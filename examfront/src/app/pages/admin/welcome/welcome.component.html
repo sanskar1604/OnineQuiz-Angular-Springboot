@@ -1,0 +1,68 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt20 mb50">
+            <div class="col-md-6">
+                <a class = "mat-link" routerLink = "/admin/categories">
+                    <mat-card>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <mat-card-title class="mat-title">{{categories.length}}</mat-card-title>
+                                    <mat-card-subtitle>Total Categories</mat-card-subtitle>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-icon class="mat-icon" color = "accent">list</mat-icon>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        </mat-card>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class = "mat-link" routerLink = "/admin/quizzes">
+                    <mat-card>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <mat-card-title class="mat-title">{{quizzes.length}}</mat-card-title>
+                                    <mat-card-subtitle>Total Quizzes</mat-card-subtitle>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-icon class="mat-icon" color = "accent">quiz</mat-icon>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <mat-card class="mt20">
+                    <h1>All Categories</h1>
+                    <mat-list>
+                        <mat-list-item *ngFor="let c of categories">
+                            <mat-icon mat-list-icon>category</mat-icon>
+                            <!-- <div mat-line>{{c.cid}}</div> -->
+                            <div mat-line>{{c.title}}</div>
+                            <div mat-line>{{c.description}}</div>
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card>
+            </div>
+            <div class="col-md-6">
+                <mat-card class="mt20">
+                    <h1>All Quizzes</h1>
+                    <mat-list>
+                        <mat-list-item *ngFor="let q of quizzes">
+                            <mat-icon mat-list-icon>quiz</mat-icon>
+                            <!-- <div mat-line>{{c.cid}}</div> -->
+                            <div mat-line>{{q.title}}</div>
+                            <div mat-line>{{q.description}}</div>
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
