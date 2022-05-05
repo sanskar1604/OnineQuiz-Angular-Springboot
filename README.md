@@ -17,7 +17,7 @@ Command to run Angular App -
   ng serve
   
   Components - 
-	  1. components
+  	1. components
 		  a. Navbar Component
 		  b. Footer Component
     2. pages
