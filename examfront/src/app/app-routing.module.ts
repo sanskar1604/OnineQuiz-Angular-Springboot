@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAdminComponent } from './pages/admin/add-admin/add-admin.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
@@ -14,10 +15,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { HistoryComponent } from './pages/user/history/history.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 
@@ -50,6 +53,10 @@ const routes: Routes = [
       {
       path:'profile',
       component:ProfileComponent,
+    },
+    {
+      path:'addadmin',
+      component:AddAdminComponent,
     },
     {
       path:'categories',
@@ -100,23 +107,35 @@ const routes: Routes = [
     path:'user-dashboard',
     component:UserDashboardComponent,
     canActivate:[NormalGuard],
+    
     children: [
+      {
+       path:'history/:qid',
+       component:HistoryComponent
+      },
       {
         path: ':catId',
         component: LoadQuizComponent,
 
       },
       {
+        path:'',
+        component:ProfileComponent,
+        
+      },
+      {
         path: 'instructions/:qid',
         component: InstructionsComponent,
       },
+      
     ]
   },
   {
     path: 'start/:qid',
     component: StartComponent,
     canActivate:[NormalGuard],
-  }
+  },
+ 
 
 ];
 

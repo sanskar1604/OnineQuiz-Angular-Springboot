@@ -37,4 +37,17 @@ export class QuestionService {
     return this._http.post(`${baseUrl}/question/eval-quiz`, questions);
   }
 
+  //update Result
+  public updateResult(result:any){
+    return this._http.post(`${baseUrl}/result/`,result);
+  }
+  // get all Result by user
+  public getAllResult(user_Id:any){
+    return this._http.get(`${baseUrl}/result/all/${user_Id}`);
+  }
+  //get result by quiz and userid
+  public getAllResultByUserAndQuiz(userId:any,quizId:any){
+    return this._http.get(`${baseUrl}/result/resultByQuiz/${userId}/${quizId}`);
+  }
+
 }
