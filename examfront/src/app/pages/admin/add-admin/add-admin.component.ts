@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-add-admin',
+  templateUrl: './add-admin.component.html',
+  styleUrls: ['./add-admin.component.css']
 })
-export class SignupComponent implements OnInit {
+export class AddAdminComponent implements OnInit {
 
   constructor(private userService:UserService,private snack:MatSnackBar) { }
   public user={
@@ -30,11 +31,19 @@ export class SignupComponent implements OnInit {
       return;
     }
     
-    this.userService.addUser(this.user).subscribe(
+    this.userService.addAdmin(this.user).subscribe(
       (data)=>{
         console.log(data)
         // alert('sucess');
         Swal.fire('Successfully Registerd','User is registerd','success');
+        this.user={
+          username:'',
+          password:'',
+          firstName:'',
+          lastName:'',
+          email:'',
+          phone:'',
+        };
 
       },
       (error)=>{
@@ -44,8 +53,9 @@ export class SignupComponent implements OnInit {
       }
     )
   }
+
   clear(){
-    this. user={
+    this.user={
       username:'',
       password:'',
       firstName:'',
@@ -56,4 +66,3 @@ export class SignupComponent implements OnInit {
   }
 
 }
-

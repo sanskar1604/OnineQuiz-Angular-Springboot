@@ -7,6 +7,9 @@
         <button mat-list-item routerLink="/admin/profile">
             <mat-icon mat-list-icon>account_circle</mat-icon>Profile
         </button>
+        <button *ngIf="isLoggedIn&&login.getUser().username=='KaleenBhaiiya'" mat-list-item routerLink="/admin/addadmin">
+            <mat-icon mat-list-icon>add</mat-icon>Add New Admin
+        </button>
         <button mat-list-item routerLink="/admin/categories">
             <mat-icon mat-list-icon>list</mat-icon>Categories
         </button>
@@ -19,7 +22,8 @@
         <button mat-list-item routerLink="/admin/add-quiz">
             <mat-icon mat-list-icon>add</mat-icon>Add Quizzes
         </button>
-        <button  mat-list-item routerLink="/admin/profile">
+        <button  mat-list-item (click)="logout()"
+        >
             <mat-icon mat-list-icon>logout</mat-icon>Logout
         </button>
 

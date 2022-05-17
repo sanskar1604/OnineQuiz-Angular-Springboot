@@ -28,14 +28,31 @@ public class Quiz {
 	private String maxMarks;
 	private String numberOfQuestions;
 	private boolean active=false;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
+	//cascade updated here
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
 	private Category category;
-	
+	//delete quiz with question
 	@OneToMany(mappedBy = "quiz",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Question>questions=new HashSet<>();
 	
+	//delete quiz with result
+	@OneToMany(mappedBy = "quiz",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Result>result=new HashSet<>();
+	
+	
+	
+	public Set<Result> getResult() {
+		return result;
+	}
+
+
+	public void setResult(Set<Result> result) {
+		this.result = result;
+	}
+
+
 	public Quiz() {
 		
 	}

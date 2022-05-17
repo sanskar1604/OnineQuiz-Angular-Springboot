@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://images.barewalls.com/comp/art-print-poster/bwc27690084/quiz-icon.jpg');
+    background-size: cover;
+  }
+  

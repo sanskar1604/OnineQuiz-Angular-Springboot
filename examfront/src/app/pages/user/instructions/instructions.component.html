@@ -13,6 +13,7 @@
                         <mat-divider></mat-divider>
                         <br />
                         <h1>Important Instructions</h1>
+                        <h3>This Quiz will be Video Proctored</h3>
                         <p>This exam will cover the content from {{quiz.title}} topic. You will have <b>{{quiz.numberOfQuestions * 2}} minutes</b> to complete this assessment.<br />Keep the following in mind:-</p>
 		                <ul>
 			                <li><b>Timing - </b>You will need to complete each of your attempts in one sitting, as you are allotted <b>{{quiz.numberOfQuestions * 2}} minutes</b> to complete each attempt.</li>
@@ -34,7 +35,7 @@
                         </ul>
                     </mat-card-content>
                     <mat-card-actions class="text-center">
-                        <button
+                        <button 
                         (click) = "startQuiz()"
                         mat-raised-button color = "primary">Start Quiz</button>
                     </mat-card-actions>

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{MatButtonModule} from '@angular/material/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import {MatInputModule} from '@angular/material/input';
@@ -42,11 +41,13 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { HistoryComponent } from './pages/user/history/history.component';
+import { AddAdminComponent } from './pages/admin/add-admin/add-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
     SignupComponent,
     LoginComponent,
     HomeComponent,
@@ -66,7 +67,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     UserSidebar,
     LoadQuizComponent,
     InstructionsComponent,
-    StartComponent
+    StartComponent,
+    UserProfileComponent,
+    HistoryComponent,
+    AddAdminComponent
     
   ],
   imports: [

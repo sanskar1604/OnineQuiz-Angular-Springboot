@@ -1,0 +1,21 @@
+<h1>History</h1>
+<mat-card  class="mt20" *ngFor="let r of result">
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
+    <mat-card-title>{{r.quiz.title}}</mat-card-title>
+    <mat-card-subtitle>{{r.quiz.category.title}}</mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+    {{r.quiz.description}}
+</mat-card-content>
+<mat-card-actions>
+    <button  mat-flat-button color="primary">MarksGot {{r.marksGot}}</button>
+    <button mat-flat-button color="primary" class="ml20">Correct Ans {{r.correctAnswers}}</button>
+    <button mat-flat-button color="primary" class="ml20"> Attempted {{r.attempted}}</button>
+    <button mat-flat-button color="primary" class="ml20" > Total Marks {{r.quiz.maxMarks}}</button>
+    <button  mat-flat-button color="primary" class="ml20"> Total Question {{r.quiz.numberOfQuestions}}</button>
+    <button mat-flat-button color="primary" class="ml20"> Date</button>
+</mat-card-actions>
+
+</mat-card>
